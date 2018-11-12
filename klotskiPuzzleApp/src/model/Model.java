@@ -34,6 +34,7 @@ public class Model {
 				&& selectTileHorizMidline - 1 != tile.yPos && selectTileHorizMidline - 1 != normalTileHorizMidline
 				&& selectedTile.xPos != tile.xPos && selectedTile.xPos != normalTileVertMidline 
 				&& selectTileVertMidline != tile.xPos && selectTileVertMidline != normalTileVertMidline)
+		//need to add additional ANDs to make sure xPos isn't < 0 or > 3 and yPos isn't <0 or >4 UNLESS 2x2
 			return true;
 		else 
 			return false;
@@ -58,8 +59,8 @@ public class Model {
 		double selectTileHorizMidline = (selectedTile.yPos + selectedTile.length) / 2; //the horizontal midline of the selected tile
 		double normalTileVertMidline = (tile.xPos + tile.width) / 2; //the vertical midline of a tile
 		double selectTileVertMidline = (selectedTile.xPos + selectedTile.width)/ 2; //the vertical midline of the selected tile
-		if (selectedTile.xPos - 1 != tile.xPos && selectedTile.xPos - 1 != normalTileVertMidline 
-				&& selectTileVertMidline - 1 != tile.xPos && selectTileVertMidline - 1 != normalTileVertMidline 
+		if (selectedTile.xPos + 1 != tile.xPos && selectedTile.xPos + 1 != normalTileVertMidline 
+				&& selectTileVertMidline + 1 != tile.xPos && selectTileVertMidline + 1 != normalTileVertMidline 
 				&& selectedTile.yPos != tile.yPos && selectedTile.yPos != normalTileHorizMidline
 				&& selectTileHorizMidline != tile.yPos && selectTileHorizMidline != normalTileHorizMidline) 
 			return true;
@@ -72,8 +73,8 @@ public class Model {
 		double selectTileHorizMidline = (selectedTile.yPos + selectedTile.length) / 2; //the horizontal midline of the selected tile
 		double normalTileVertMidline = (tile.xPos + tile.width) / 2; //the vertical midline of a tile
 		double selectTileVertMidline = (selectedTile.xPos + selectedTile.width)/ 2; //the vertical midline of the selected tile
-		if (selectedTile.xPos + 1 != tile.xPos && selectedTile.xPos + 1 != normalTileVertMidline 
-				&& selectTileVertMidline + 1 != tile.xPos && selectTileVertMidline + 1 != normalTileVertMidline 
+		if (selectedTile.xPos - 1 != tile.xPos && selectedTile.xPos - 1 != normalTileVertMidline 
+				&& selectTileVertMidline - 1 != tile.xPos && selectTileVertMidline - 1 != normalTileVertMidline 
 				&& selectedTile.yPos != tile.yPos && selectedTile.yPos != normalTileHorizMidline
 				&& selectTileHorizMidline != tile.yPos && selectTileHorizMidline != normalTileHorizMidline) 
 			return true;

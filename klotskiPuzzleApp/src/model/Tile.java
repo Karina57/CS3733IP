@@ -1,15 +1,20 @@
 package model;
 
+import java.util.List;
+import java.awt.Point;
+
 public class Tile {
 	int width; //the physical width of the tile
 	int length; //the physical length of the tile
+	List<Point> points;
 	int xPos; //the x position of the upper left corner of the tile
 	int yPos; //the y position of the upper left corner of the tile
 	boolean isSelected; //true if selected piece 
 	
-	public Tile(int width, int length, int xPos, int yPos, boolean isSelected) {
+	public Tile(int width, int length, List<Point> points, int xPos, int yPos, boolean isSelected) {
 		this.width = width;
 		this.length = length;
+		this.points = points;
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.isSelected = isSelected;
@@ -22,6 +27,10 @@ public class Tile {
 	
 	public void setLength(int length) {
 		this.length = length;
+	}
+	
+	public void setPoints() {
+		//how do i write this setter?
 	}
 	
 	public void setxPos(int xPos) {
@@ -44,6 +53,10 @@ public class Tile {
 	public int getLength() {
 		return length;
 	}
+	
+	//public List getPoints() {
+		//
+	//}
 	
 	public int getxPos() {
 		return xPos;

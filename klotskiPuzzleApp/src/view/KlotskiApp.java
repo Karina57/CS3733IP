@@ -37,12 +37,15 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 	public KlotskiApp(Model model) {
 		
 		PuzzleView panel = new PuzzleView(model); 
-		SelectPieceController controller = new SelectPieceController(this, model);
+		SelectPieceController controller = new SelectPieceController(KlotskiApp.this, model);
 		panel.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				controller.select(e.getPoint());
 			}
 		});
+		
+		MovePieceController moveController = new MovePieceController(KlotskiApp.this, model);
+		
 		
 		//from SlidingPuzzleApp class in Sample_IP_2
 		setTitle("Klotski Puzzle App");
@@ -59,35 +62,36 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		JButton resetButton = new JButton("Reset");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//new ResetController(KlotskiApp.this, model).resetBoard();
+				//new ResetController(KlotskiApp.this, model).resetBoard(); //FIX LATER
 			}
 		});
 		
 		JButton upButton = new JButton("^");
 		upButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MovePieceController(KlotskiApp.this, model, upButton);
+				moveController.move(model.getSelectedTile(), upButton);
 			}
 		});
 		
 		JButton leftButton = new JButton("<");
 		leftButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MovePieceController(KlotskiApp.this, model, leftButton);
+				moveController.move(model.getSelectedTile(), leftButton);
 			}
 		});
 		
 		JButton rightButton = new JButton(">");
 		rightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MovePieceController(KlotskiApp.this, model, leftButton);
+				moveController.move(model.getSelectedTile(), rightButton);
 			}
 		});
 		
 		JButton downButton = new JButton("V");
 		downButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MovePieceController(KlotskiApp.this, model, downButton);
+				moveController.move(model.getSelectedTile(), downButton);
+				//System.out.println("pressed");
 			}
 		});
 		
@@ -153,7 +157,7 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		);
 		contentPane.setLayout(gl_contentPane);
 		
-		setResizable(false);  //so that it can't resize
+		//setResizable(false);  //so that it can't resize
 		this.model = model; 
 			
 	

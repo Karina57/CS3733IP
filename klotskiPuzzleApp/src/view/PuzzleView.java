@@ -47,7 +47,7 @@ public class PuzzleView extends JPanel {
 			else {
 				g.setColor(Color.white);  //other tiles
 			}
-			g.fillRect((5+(90*t.getxPos())), 5+(90*t.getyPos()), (85*t.getWidth()), (85*t.getLength()));
+			g.fillRect(((90*t.getxPos())), (90*t.getyPos()), (90*t.getWidth()), (90*t.getLength()));
 			
 		}
 		

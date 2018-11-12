@@ -11,32 +11,34 @@ import view.KlotskiApp;
 public class MovePieceController {
 	Model model;  //needs the model because it needs the tiles to know which is selected
 	KlotskiApp app; //needs to listen to the app to know when buttons are pressed
-	JButton button;
 	
-	public MovePieceController (KlotskiApp app, Model m, JButton b) {
+	public MovePieceController (KlotskiApp app, Model m) {
 		this.model = m;
 		this.app = app;
-		this.button = b;
 	}
 	
-	public void move (Tile selectedTile, JButton b) { 	
+	public void move (Tile selectedTile, JButton button) { 	
 		for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
 			Tile t = it.next();
-			if (this.button.getText() == "^") {	
+			if (button.getText() == "^") {	
 				if (model.validUp(selectedTile, t) == true);
-					{moveUp(selectedTile);}
+					{moveUp(selectedTile);
+					app.repaint();}
 			} 
-			else if (this.button.getText() == "V") {
+			else if (button.getText() == "V") {
 				if (model.validDown(selectedTile, t) == true);
-					{moveDown(selectedTile);}
+					{moveDown(selectedTile);
+					app.repaint();}
 			}
-			else if(this.button.getText() == ">") {
+			else if(button.getText() == ">") {
 				if (model.validRight(selectedTile, t) == true);
-					{moveLeft(selectedTile);}
+					{moveLeft(selectedTile);
+					app.repaint();}
 			}
-			else if(this.button.getText() == "<") {
+			else if(button.getText() == "<") {
 				if (model.validLeft(selectedTile, t) == true);
-				{moveRight(selectedTile);}
+				{moveRight(selectedTile);
+				app.repaint();}
 			}
 		}
 
@@ -69,11 +71,11 @@ public class MovePieceController {
 	}
 	
 	public void moveLeft(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() - 1);
+		selectedTile.setxPos(selectedTile.getxPos() + 1);
 	}
 	
 	public void moveRight(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() + 1);
+		selectedTile.setxPos(selectedTile.getxPos() - 1);
 	}
 }
 	
