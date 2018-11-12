@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.awt.Point;
 
@@ -19,7 +20,6 @@ public class Tile {
 		this.yPos = yPos;
 		this.isSelected = isSelected;
 	}
-	
 	//setters for attributes
 	public void setWidth(double width) {
 		this.width = width;

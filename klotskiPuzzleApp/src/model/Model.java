@@ -52,9 +52,9 @@ public class Model {
 				&& selectTileHorizMidline - 1 != normalTileHorizMidline
 				&& selectedTile.xPos != tile.xPos 
 				&& selectedTile.xPos != normalTileVertMidline 
-				&& selectTileVertMidline != tile.xPos 
+	 			&& selectTileVertMidline != tile.xPos 
 				&& selectTileVertMidline != normalTileVertMidline
-				&& selectedTile.yPos - 1 >= 0) //not going to go above the board boundary
+				&& selectedTile.yPos - 1 >= board.getTopBoundary()) //not going to go above the board boundary
 			return true;
 		else 
 			return false;
@@ -74,7 +74,7 @@ public class Model {
 				&& selectedTile.xPos != normalTileVertMidline 
 				&& selectTileVertMidline != tile.xPos 
 				&& selectTileVertMidline != normalTileVertMidline
-				&& selectedTile.yPos <= 4) //not going to go below the board boundary
+				&& selectedTile.yPos <= board.getBottomBoundary()) //not going to go below the board boundary
 			return true;
 		else 
 			return false;
@@ -94,7 +94,7 @@ public class Model {
 				&& selectedTile.yPos != normalTileHorizMidline
 				&& selectTileHorizMidline != tile.yPos 
 				&& selectTileHorizMidline != normalTileHorizMidline
-				&& selectedTile.xPos >= 0) //not going to go to the left of the board boundary
+				&& selectedTile.xPos >= board.getLeftBoundary()) //not going to go to the left of the board boundary
 			return true;
 		else 
 			return false;
@@ -114,7 +114,7 @@ public class Model {
 				&& selectedTile.yPos != normalTileHorizMidline
 				&& selectTileHorizMidline != tile.yPos 
 				&& selectTileHorizMidline != normalTileHorizMidline
-				&& selectedTile.xPos <= 3) //not going to go to the right of the board boundary  
+				&& selectedTile.xPos <= board.getRightBoundary()) //not going to go to the right of the board boundary  
 			return true;
 		else 
 			return false;

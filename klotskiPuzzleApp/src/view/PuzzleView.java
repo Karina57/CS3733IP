@@ -47,17 +47,17 @@ public class PuzzleView extends JPanel {
 			else {
 				g.setColor(Color.white);  //other tiles
 			}
-			g.fillRect(((int)(85*t.getxPos())), (int) (85*t.getyPos()), (int) (85*t.getWidth()), (int) (85*t.getLength()));
+			g.fillRect(((int)(100*t.getxPos())), (int) (100*t.getyPos()), (int) (90*t.getWidth()), (int) (90*t.getLength()));
 			
 		}
 		
 		//bottom line (visualization of bottom boundary of board)
 		g.setColor(Color.black);
-		g.fillRect(0, 465, 400, 6);
+		g.fillRect(0, 500, 400, 6);
 
 		//exit line
 		g.setColor(Color.green);
-		g.fillRect(90, 465, 180, 10);
+		g.fillRect(90, 500, 180, 10);
 
 	}
 

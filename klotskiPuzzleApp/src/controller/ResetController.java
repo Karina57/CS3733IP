@@ -1,16 +1,15 @@
 package controller;
 
 import model.Board;
-import model.Model;
 import view.KlotskiApp;
 
 public class ResetController {
 	
 	KlotskiApp app;
-	Board b;
+	Board board;
 	
-	public ResetController(KlotskiApp app, Board b) {
-		this.board = b;
+	public ResetController(KlotskiApp app, Board board) {
+		this.board = board;
 		this.app = app;
 	}
 	

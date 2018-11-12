@@ -22,8 +22,10 @@ public class MovePieceController {
 			Tile t = it.next();
 			if (button.getText() == "^") {	
 				if (model.validUp(selectedTile, t) == true);
-					{moveUp(selectedTile);
-					app.repaint();}
+					{
+						moveUp(selectedTile);
+						app.repaint();
+					}
 			} 
 			else if (button.getText() == "V") {
 				if (model.validDown(selectedTile, t) == true);
@@ -37,13 +39,17 @@ public class MovePieceController {
 			}
 			else if(button.getText() == ">") {
 				if (model.validRight(selectedTile, t) == true);
-					{moveLeft(selectedTile);
-					app.repaint();}
+					{
+						moveLeft(selectedTile);
+						app.repaint();
+					}
 			}
 			else if(button.getText() == "<") {
 				if (model.validLeft(selectedTile, t) == true);
-					{moveRight(selectedTile);
-					app.repaint();}
+					{
+						moveRight(selectedTile);
+						app.repaint();
+					}
 			}
 		}
 
@@ -57,12 +63,12 @@ public class MovePieceController {
 
 		//and increment the move counter 
 		model.incrementMove(); 
-		app.repaint();
 		
 		//at the end, setSelection(false) for the tile we just moved 
 		//empty out the selected piece again, and reset the selected tile to not be selected anymore
 		selectedTile.setSelection(false);
 		model.setSelectTile(null);
+		app.repaint();
 		
 	}
 

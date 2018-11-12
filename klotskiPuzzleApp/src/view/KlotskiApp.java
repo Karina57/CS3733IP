@@ -53,17 +53,17 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 750);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5)); 
 		setContentPane(contentPane);
 		
 		//PuzzleView panel = new PuzzleView();
 		panel.setBackground(Color.GRAY);
-		panel.setSize(new Dimension(400, 500));
+		panel.setSize(new Dimension(500, 600));
 		
 		JButton resetButton = new JButton("Reset");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ResetController.resetBoard(); //FIX LATER
+				//ResetController.resetBoard(); //FIX LATER
 			}
 		});
 		
@@ -92,7 +92,6 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		downButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				moveController.move(model.getSelectedTile(), downButton);
-				//System.out.println("pressed");
 			}
 		});
 		
@@ -108,7 +107,7 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 370, GroupLayout.PREFERRED_SIZE) //337
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE) //337
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(33)
@@ -167,7 +166,7 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 	}
 
 	public void setWinLabel(String string) {
-		this.winLabel = string;
+		//this.winLabel = string;
 		
 	}	
 }

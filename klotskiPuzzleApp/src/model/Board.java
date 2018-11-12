@@ -67,7 +67,31 @@ public class Board {
 		tileSet.add(rectFive);
 	} 
 	
-	//If I need the getters later, I can write them here. 
+	//If I need the getters later, I can write them here 
+	public int getTopBoundary() {
+		return topBoundary;
+	}
+	
+	public int getBottomBoundary() {
+		return bottomBoundary;
+	}
+	
+	public int getLeftBoundary() {
+		return leftBoundary;
+	}
+	
+	public int getRightBoundary() {
+		return rightBoundary;
+	}
+	
+	public int getWinningRow() {
+		return winningRow;
+	}
+	
+	public int getRinningColumn() {
+		return winningColumn;
+	}
+	
 	//I don't need setters, because these values stay the same throughout this project.
 	
 
