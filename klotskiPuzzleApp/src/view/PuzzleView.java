@@ -38,16 +38,16 @@ public class PuzzleView extends JPanel {
 			//print the rectangles in the panel(?) at the x and y pos 
 			//print all the tiles one color except the winning tile, the 2x2 tile
 			
-			if(t.getWidth() == 2 && t.getLength() == 2) {
-				g.setColor(Color.red); 	//winning tile
-			}
-			else if(t.getSelection() == true) {
+			if(t.getSelection() == true) {
 				g.setColor(Color.blue); //currently selected tile is another color, if there is one 
+			}
+			else if(t.getWidth() == 2 && t.getLength() == 2) {
+				g.setColor(Color.red);  //winning tile
 			}
 			else {
 				g.setColor(Color.white);  //other tiles
 			}
-			g.fillRect(((90*t.getxPos())), (90*t.getyPos()), (90*t.getWidth()), (90*t.getLength()));
+			g.fillRect(((int)(85*t.getxPos())), (int) (85*t.getyPos()), (int) (85*t.getWidth()), (int) (85*t.getLength()));
 			
 		}
 		

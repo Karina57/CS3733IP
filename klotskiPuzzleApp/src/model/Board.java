@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 public class Board {
 	int topBoundary;
@@ -40,19 +39,19 @@ public class Board {
 		this.rightBoundary = 4; 
 		this.winningRow = 5;
 		this.winningColumn = 1;
-		this.tileSet = tileSet;
+		//this.tileSet = tileSet;
 		
 		//Make the ten tiles with the correct sizes and positions
 		Tile rectOne = new Tile(1, 2, Arrays.asList(new Point(0, 1)), 0, 0, false);
-		Tile winningTile = new Tile(2, 2, Arrays.asList(new Point(2, 0), new Point (1, 1), new Point (2, 1)), 1, 0, false);
-		Tile rectTwo = new Tile(1, 2, Arrays.asList(new Point(3, 1)), 3, 0, false); 
-		Tile rectThree = new Tile(1, 2, Arrays.asList(new Point(0, 3)), 0, 2, false);
+		Tile winningTile = new Tile(2, 2, Arrays.asList(new Point(1, 0), new Point (0, 1), new Point (1, 1)), 1, 0, false);
+		Tile rectTwo = new Tile(1, 2, Arrays.asList(new Point(0, 1)), 3, 0, false); 
+		Tile rectThree = new Tile(1, 2, Arrays.asList(new Point(0, 1)), 0, 2, false);
 		Tile squareOne = new Tile (1, 1, new ArrayList<Point>(), 1, 2, false);
 		Tile squareTwo = new Tile(1, 1, new ArrayList<Point>(), 2, 2, false);
-		Tile rectFour = new Tile(1, 2, Arrays.asList(new Point(3, 3)), 3, 2, false);
+		Tile rectFour = new Tile(1, 2, Arrays.asList(new Point(0, 1)), 3, 2, false);
 		Tile squareThree = new Tile(1, 1, new ArrayList<Point>(), 1, 3, false);
 		Tile squareFour = new Tile(1, 1, new ArrayList<Point>(), 2, 3, false);
-		Tile rectFive = new Tile(2, 1, Arrays.asList(new Point(2, 4)), 1, 4, false);
+		Tile rectFive = new Tile(2, 1, Arrays.asList(new Point(1, 0)), 1, 4, false);
 		
 		//Put the ten tiles in a linked list
 		tileSet = new LinkedList<Tile>();

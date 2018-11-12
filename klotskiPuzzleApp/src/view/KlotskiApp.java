@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controller.MovePieceController;
+import controller.ResetController;
 import controller.SelectPieceController;
 import model.Model;
 
@@ -62,7 +63,7 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		JButton resetButton = new JButton("Reset");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//new ResetController(KlotskiApp.this, model).resetBoard(); //FIX LATER
+				ResetController.resetBoard(); //FIX LATER
 			}
 		});
 		
@@ -99,6 +100,8 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 		
 		JLabel label = new JLabel("12"); //this shouldn't actually be 12, but that's a problem for later
 		//End sample code
+		
+		JLabel winLabel = new JLabel(""); 
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -162,5 +165,9 @@ public class KlotskiApp extends JFrame { //implements ActionListener {
 			
 	
 	}
-	
+
+	public void setWinLabel(String string) {
+		this.winLabel = string;
+		
+	}	
 }

@@ -27,8 +27,13 @@ public class MovePieceController {
 			} 
 			else if (button.getText() == "V") {
 				if (model.validDown(selectedTile, t) == true);
-					{moveDown(selectedTile);
-					app.repaint();}
+					{if (selectedTile.getWidth() == 2 && selectedTile.getLength() == 2 && selectedTile.getyPos() == 4) {
+						this.app.setWinLabel("Yay! You win!");
+					}
+					else 
+						moveDown(selectedTile);
+						app.repaint();	
+					}
 			}
 			else if(button.getText() == ">") {
 				if (model.validRight(selectedTile, t) == true);
@@ -37,8 +42,8 @@ public class MovePieceController {
 			}
 			else if(button.getText() == "<") {
 				if (model.validLeft(selectedTile, t) == true);
-				{moveRight(selectedTile);
-				app.repaint();}
+					{moveRight(selectedTile);
+					app.repaint();}
 			}
 		}
 
@@ -63,19 +68,19 @@ public class MovePieceController {
 
 	//these functions do the actual moving
 	public void moveUp(Tile selectedTile) {
-		selectedTile.setyPos(selectedTile.getyPos() - 1);
+		selectedTile.setyPos(selectedTile.getyPos() - 0.1);
 	}
 	
 	public void moveDown(Tile selectedTile) {
-		selectedTile.setyPos(selectedTile.getyPos() + 1);
+		selectedTile.setyPos(selectedTile.getyPos() + 0.1);
 	}
 	
 	public void moveLeft(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() + 1);
+		selectedTile.setxPos(selectedTile.getxPos() + 0.1);
 	}
 	
 	public void moveRight(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() - 1);
+		selectedTile.setxPos(selectedTile.getxPos() - 0.1);
 	}
 }
 	

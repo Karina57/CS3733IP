@@ -4,11 +4,11 @@ import java.util.List;
 import java.awt.Point;
 
 public class Tile {
-	int width; //the physical width of the tile
-	int length; //the physical length of the tile
+	double width; //the physical width of the tile
+	double length; //the physical length of the tile
 	List<Point> points;
-	int xPos; //the x position of the upper left corner of the tile
-	int yPos; //the y position of the upper left corner of the tile
+	double xPos; //the x position of the upper left corner of the tile
+	double yPos; //the y position of the upper left corner of the tile
 	boolean isSelected; //true if selected piece 
 	
 	public Tile(int width, int length, List<Point> points, int xPos, int yPos, boolean isSelected) {
@@ -21,23 +21,23 @@ public class Tile {
 	}
 	
 	//setters for attributes
-	public void setWidth(int width) {
+	public void setWidth(double width) {
 		this.width = width;
 	}
 	
-	public void setLength(int length) {
+	public void setLength(double length) {
 		this.length = length;
 	}
 	
-	public void setPoints() {
+	//public void setPoints() {
 		//how do i write this setter?
+	//}
+	
+	public void setxPos(double d) {
+		this.xPos = d;
 	}
 	
-	public void setxPos(int xPos) {
-		this.xPos = xPos;
-	}
-	
-	public void setyPos(int yPos) {
+	public void setyPos(double yPos) {
 		this.yPos = yPos;
 	}
 	
@@ -46,11 +46,11 @@ public class Tile {
 	}
 	
 	//getters for attributes
-	public int getWidth() {
+	public double getWidth() {
 		return  width;
 	}
 	
-	public int getLength() {
+	public double getLength() {
 		return length;
 	}
 	
@@ -58,11 +58,11 @@ public class Tile {
 		//
 	//}
 	
-	public int getxPos() {
+	public double getxPos() {
 		return xPos;
 	}
 	
-	public int getyPos() {
+	public double getyPos() {
 		return yPos;
 	}
 	
