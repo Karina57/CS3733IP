@@ -17,41 +17,74 @@ public class MovePieceController {
 		this.app = app;
 	}
 	
-	public void move (Tile selectedTile, JButton button) { 	
-		for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
-			Tile t = it.next();
-			if (button.getText() == "^") {	
-				if (model.validUp(selectedTile, t) == true);
+	public void move (Tile selectedTile, JButton button) { 
+		
+		boolean canMove;
+		canMove = true;
+		
+		if (button.getText() == "^") {
+			for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
+				Tile t = it.next();
+				if (model.validUp(selectedTile, t) == false)
 					{
-						moveUp(selectedTile);
-						app.repaint();
+						canMove = false;
+						//break;
 					}
 			} 
-			else if (button.getText() == "V") {
-				if (model.validDown(selectedTile, t) == true);
-					{if (selectedTile.getWidth() == 2 && selectedTile.getLength() == 2 && selectedTile.getyPos() == 4) {
-						this.app.setWinLabel("Yay! You win!");
-					}
-					else 
-						moveDown(selectedTile);
-						app.repaint();	
-					}
-			}
-			else if(button.getText() == ">") {
-				if (model.validRight(selectedTile, t) == true);
-					{
-						moveLeft(selectedTile);
-						app.repaint();
-					}
-			}
-			else if(button.getText() == "<") {
-				if (model.validLeft(selectedTile, t) == true);
-					{
-						moveRight(selectedTile);
-						app.repaint();
-					}
+			if (canMove == true) {
+				moveUp(selectedTile);
+				app.repaint();
 			}
 		}
+		else if (button.getText() == "V") {
+			for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
+				Tile t = it.next();
+				if (model.validDown(selectedTile, t) == false)
+				{
+					canMove = false;
+					//break;
+				}
+			}
+			if (canMove == true) {
+				moveDown(selectedTile);
+				app.repaint();
+			}
+			if (selectedTile.getWidth() == 2 && selectedTile.getLength() == 2 
+					&& selectedTile.getyPos() == 3 && selectedTile.getxPos() == 1) {
+					this.app.setWinLabel("Yay! You win!");
+					app.repaint();
+			}
+
+		}
+		
+		else if(button.getText() == ">") {
+			for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
+				Tile t = it.next();
+				if (model.validRight(selectedTile, t) == false)
+					{
+						canMove = false;
+						//break;
+					}
+			}
+			if (canMove == true) {
+				moveLeft(selectedTile);
+				app.repaint();
+			}
+		}
+		else if(button.getText() == "<") {
+			for (Iterator<Tile> it = model.getBoard().iterator(); it.hasNext(); ) {
+				Tile t = it.next();
+				if (model.validLeft(selectedTile, t) == false)
+					{
+						canMove = false;
+						//break;
+					}
+			}
+			if (canMove == true) {
+				moveRight(selectedTile);
+				app.repaint();
+		}
+	}
 
 		//check if there is a tile whose current values are where we want to move to (validity functions)
 		
@@ -74,19 +107,19 @@ public class MovePieceController {
 
 	//these functions do the actual moving
 	public void moveUp(Tile selectedTile) {
-		selectedTile.setyPos(selectedTile.getyPos() - 0.1);
+		selectedTile.setyPos(selectedTile.getyPos() - 1);
 	}
 	
 	public void moveDown(Tile selectedTile) {
-		selectedTile.setyPos(selectedTile.getyPos() + 0.1);
+		selectedTile.setyPos(selectedTile.getyPos() + 1);
 	}
 	
 	public void moveLeft(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() + 0.1);
+		selectedTile.setxPos(selectedTile.getxPos() + 1);
 	}
 	
 	public void moveRight(Tile selectedTile) {
-		selectedTile.setxPos(selectedTile.getxPos() - 0.1);
+		selectedTile.setxPos(selectedTile.getxPos() - 1);
 	}
 }
 	

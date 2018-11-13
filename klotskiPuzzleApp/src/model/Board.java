@@ -18,9 +18,9 @@ public class Board {
 
 	// must provide:
 	//    move piece in direction
-	public void moveSelectedPiece(int direction) { 
-		
-	}
+	//public void moveSelectedPiece(int direction) { 
+	//	
+	//}
 	
 	// make tiles available
 	public Iterator<Tile> iterator() { 
@@ -88,7 +88,7 @@ public class Board {
 		return winningRow;
 	}
 	
-	public int getRinningColumn() {
+	public int getWinningColumn() {
 		return winningColumn;
 	}
 	
